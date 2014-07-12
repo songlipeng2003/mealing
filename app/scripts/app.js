@@ -18,6 +18,7 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
+    'ui.notify',
     'mealingApp.service'
   ])
   .config(function ($routeProvider) {
@@ -33,17 +34,33 @@ angular
       .otherwise({
         redirectTo: '/'
       });
-  }).run(function ($rootScope, CartService) {
+  }).config(['notificationServiceProvider', function(notificationServiceProvider) {
+    notificationServiceProvider.setDefaults({
+      history: false,
+      delay: 4000,
+      styling: 'bootstrap3',
+        closer: false,
+        closer_hover: false
+    });
+
+}])
+  .run(function ($rootScope, CartService, notificationService) {
     $rootScope.addCart = function(goods){
       CartService.add(goods);
+
+      notificationService.info(goods.name+"加入购物车成功");
     }
 
     $rootScope.removeCart = function(goods){
-      CartService.remove(goods)
+      CartService.remove(goods);
+
+      notificationService.info(goods.name+"从购物车删除成功");
     }
 
     $rootScope.clearCart = function(){
       CartService.clear();
+
+      notificationService.notice("清空购物车成功");
     }
 
     CartService.init();
