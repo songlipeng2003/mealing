@@ -1,5 +1,7 @@
 'use strict';
 
+angular.module('mealingApp.service', [])
+
 /**
  * @ngdoc overview
  * @name mealingApp
@@ -15,7 +17,8 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'mealingApp.service'
   ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -30,4 +33,18 @@ angular
       .otherwise({
         redirectTo: '/'
       });
-  });
+  }).run(function ($rootScope, CartService) {
+    $rootScope.addCart = function(goods){
+      CartService.add(goods);
+    }
+
+    $rootScope.removeCart = function(goods){
+      CartService.remove(goods)
+    }
+
+    $rootScope.clearCart = function(){
+      CartService.clear();
+    }
+
+    CartService.init();
+  });;
