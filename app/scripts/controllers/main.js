@@ -8,10 +8,8 @@
  * Controller of the mealingApp
  */
 angular.module('mealingApp')
-  .controller('MainCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  .controller('MainCtrl', function ($scope, CommonService) {
+    CommonService.getShops().success(function(data){
+      $scope.shops = data.shops;
+    });
   });
