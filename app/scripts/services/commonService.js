@@ -7,8 +7,8 @@
  * # common
  * Service in the mealingApp.
  */
-angular.module('mealingApp')
-  .service('CommonService', function Common($http) {
+angular.module('mealingApp.service')
+  .service('CommonService', function CommonService($http) {
     this.getShops = function(){
       return $http.get('/json/shop.json');
     }
