@@ -39,7 +39,8 @@
         <h2>购物车</h2>
         <ul>
           <li ng-repeat="cart_goods in cart.goods_list track by $index">
-            {{cart_goods.name}}
+            <span class="goods-name">{{cart_goods.name}}</span>
+            <span class="goods-price">{{cart_goods.price | currency:"RMB "}}</span>
             <a href="" ng-click="removeCart(cart_goods)">
                 <span class="glyphicon glyphicon-remove"></span>
             </a>

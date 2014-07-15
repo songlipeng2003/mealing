@@ -3,7 +3,8 @@
     <h2>{{shop.title}}</h2>
     <ul>
       <li ng-repeat="goods in shop.goods_list">
-        {{goods.name}}
+        <span class="goods-name">{{goods.name}}</span>
+        <span class="goods-price">{{goods.price | currency:"RMB "}}</span>
         <a href="" ng-click="addCart(goods)" title="加入购物车">
           <span class="glyphicon glyphicon-plus"></span>
         </a>
