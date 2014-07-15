@@ -4,7 +4,9 @@
     <ul>
       <li ng-repeat="goods in shop.goods_list">
         {{goods.name}}
-        <a href="" ng-click="addCart(goods)">加入购物车</a>
+        <a href="" ng-click="addCart(goods)" title="加入购物车">
+          <span class="glyphicon glyphicon-plus"></span>
+        </a>
       </li>
     </ul>
   </div>

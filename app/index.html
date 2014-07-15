@@ -40,7 +40,9 @@
         <ul>
           <li ng-repeat="cart_goods in cart.goods_list track by $index">
             {{cart_goods.name}}
-            <a href="" ng-click="removeCart(cart_goods)">删除</a>
+            <a href="" ng-click="removeCart(cart_goods)">
+                <span class="glyphicon glyphicon-remove"></span>
+            </a>
           </li>
         </ul>
 
