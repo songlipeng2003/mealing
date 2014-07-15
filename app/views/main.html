@@ -8,16 +8,4 @@
       </li>
     </ul>
   </div>
-
-  <div>
-    <h2>购物车</h2>
-    <ul>
-      <li ng-repeat="cart_goods in cart.goods_list track by $index">
-        {{cart_goods.name}}
-        <a href="" ng-click="removeCart(cart_goods)">删除</a>
-      </li>
-    </ul>
-
-    <button class="btn" ng-click="clearCart()">清空购物车</button>
-  </div>
 </div>
