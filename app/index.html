@@ -40,8 +40,8 @@
             <h3 class="panel-title">购物车</h3>
         </div>
         <div class="panel-body">
-            <ul>
-              <li ng-repeat="cart_goods in cart.goods_list track by $index">
+            <ul ng-repeat="shop_goods_list in cart.goods_list">
+              <li ng-repeat="cart_goods in shop_goods_list">
                 <span class="goods-name">{{cart_goods.name}}</span>
                 <span class="goods-price">{{cart_goods.price | currency:"RMB "}}</span>
                 <a href="" ng-click="removeCart(cart_goods)">
@@ -50,7 +50,8 @@
               </li>
             </ul>
 
-            <button class="btn  btn-warning btn-block" ng-click="clearCart()">清空购物车</button>
+          <button class="btn btn-default btn-block">结账</button>
+            <button class="btn btn-warning btn-block" ng-click="clearCart()">清空购物车</button>
         </div>
       </div>
 

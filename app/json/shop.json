@@ -1,31 +1,43 @@
 {
   "shops":[
     {
+      "id": 1,
       "title":"好吃点",
       "goods_list":[
         {
           "id":1,
+          "shop_id":1,
           "name":"土豆烧肉",
           "price":10
         },
         {
           "id":2,
-          "name":"土豆烧肉",
+          "shop_id":1,
+          "name":"小炒肉",
           "price":10
-        },
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title":"好吃点",
+      "goods_list":[
         {
           "id":3,
-          "name":"土豆烧肉",
+          "shop_id":2,
+          "name":"精品工作餐",
           "price":10
         },
         {
           "id":4,
-          "name":"土豆烧肉",
+          "shop_id":2,
+          "name":"牛肉面",
           "price":10
         },
         {
           "id":5,
-          "name":"土豆烧肉",
+          "shop_id":2,
+          "name":"米线",
           "price":10
         }
       ]

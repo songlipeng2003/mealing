@@ -17,14 +17,17 @@ angular.module('mealingApp.service')
 
     this.add = function(goods){
       var cart = self.getCart();
-      cart.goods_list['P'+goods.id] = goods;
+      if(!cart.goods_list['S'+goods.shop_id]){
+        cart.goods_list['S'+goods.shop_id] = {};
+      }
+      cart.goods_list['S'+goods.shop_id]['P'+goods.id] = goods;
 
       self.save(cart);
     }
 
     this.remove = function(goods){
       var cart = self.getCart();
-      delete cart.goods_list['P'+goods.id];
+      delete cart.goods_list['S'+goods.shop_id]['P'+goods.id];
 
       self.save(cart);
     }
