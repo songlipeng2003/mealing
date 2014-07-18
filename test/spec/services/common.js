@@ -7,8 +7,8 @@ describe('Service: commonService', function () {
 
   // instantiate service
   var commonService;
-  beforeEach(inject(function (_common_) {
-    commonService = _common_;
+  beforeEach(inject(function (_commonService_) {
+    commonService = _commonService_;
   }));
 
   it('should do something', function () {
